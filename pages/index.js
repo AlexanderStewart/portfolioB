@@ -12,7 +12,7 @@ const Home = () => {
   const leftRightAnimationTwo = useSpring({ to: { x: 10, color: '#facc15' }, from: { x: -10, color: '#22d3ee' }, config: config.molasses, loop: { reverse: true } });
   const rightLeftAnimationTwo = useSpring({ to: { x: -10, color: '#22d3ee' }, from: { x: 10, color: '#facc15' }, config: config.molasses, loop: { reverse: true } });
 
-  const bounce = useSpring({ to: { x: 4 }, from: { x: -4 }, config: config.bounce, delay: 200, loop: { reverse: true } });
+  const bounce = useSpring({ to: { rotateZ: 2 }, from: { rotateZ: -2 }, config: config.bounce, delay: 200, loop: { reverse: true } });
 
   return (
     <>
@@ -45,7 +45,7 @@ const Home = () => {
             <div className="mt-6" />
             <p className="text-gray-800 text-lg font-serif">
               I specialize in all things React and React Native. This pretty nifty site
-              (if I do say so myself) was written in Next.js. You can view the source code <a href="google.ca" className="text-blue-500">here</a>.
+              (if I do say so myself) was written in Next.js. You can view the source code <a href="https://github.com/AlexanderStewart/portfolioB" className="text-blue-500">here</a>.
             </p>
             <div className="mt-8" />
           </div>
