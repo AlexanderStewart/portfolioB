@@ -27,10 +27,10 @@ const Box = (props) => {
 
 const Cube = (props) => {
 
-  const { width, height } = props;
+  const { width, height, color } = props;
 
   return (
-    <Canvas style={{ height: height, width: width }}>
+    <Canvas style={{ height: height, width: width }} className={color === 'yellow' ? "bg-yellow-100 rounded-full border-4 border-yellow-400" : "bg-teal-400 rounded-full border-4 border-white"}>
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
       <Box position={[0, 0, 0]} />
