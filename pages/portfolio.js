@@ -22,7 +22,7 @@ const Portfolio = () => {
       <div>
         <div className="mt-44" />
         <div className="flex flex-1 justify-center">
-          <div className="max-w-[500px] mx-4 flex flex-1 flex-col" >
+          <div className="max-w-[600px] mx-4 flex flex-1 flex-col" >
 
             <div className="bg-gray-800 rounded-md p-8">
               <h2 className="text-white text-4xl font-bold leading-8">Portfolio</h2>

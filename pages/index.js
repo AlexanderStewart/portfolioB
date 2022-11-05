@@ -21,7 +21,7 @@ const Home = () => {
       <animated.div style={startAnimation}>
         <div className="mt-44" />
         <div className="flex flex-1 flex-col items-center">
-          <div className="max-w-[500px] mx-4" >
+          <div className="max-w-[600px] mx-4" >
             <h3 className="text-gray-800 text-lg font-serif">Hey there! My name is</h3>
             <div className="mt-2" />
             <animated.div className="flex flex-1 w-full p-10 bg-gray-800 flex-col rounded-md border-2 border-gray-800" >

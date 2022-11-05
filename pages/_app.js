@@ -44,7 +44,7 @@ function MyApp({ Component, pageProps }) {
       </div>
 
       <div className="absolute top-0 left-0 right-0 flex flex-1 justify-center z-10 mt-4">
-        <animated.div className="max-w-[500px] flex flex-1"
+        <animated.div className="max-w-[600px] flex flex-1"
           onClick={() => {
             setViewMenu(!viewMenu);
             setCubeColor(viewMenu ? 'yellow' : 'teal');
