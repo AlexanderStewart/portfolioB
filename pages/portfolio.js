@@ -1,21 +1,25 @@
 import React, { useState } from 'react';
 import { useSpring, animated, config } from 'react-spring';
 import Image from 'next/image';
+import VisibilitySensor from 'react-visibility-sensor';
 
 const Portfolio = () => {
 
   // States
+  const [onSeenA, setOnSeenA] = useState(false);
+  const [onSeenB, setOnSeenB] = useState(false);
+  const [onSeenC, setOnSeenC] = useState(false);
+  const [onSeenD, setOnSeenD] = useState(false);
+  const [onSeenE, setOnSeenE] = useState(false);
+  const [onSeenF, setOnSeenF] = useState(false);
 
   // Springs
-  const startAnimation = useSpring({ to: { opacity: 1, y: 0 }, from: { opacity: 0, y: 100 }, config: config.molasses, delay: 200 });
-
-  const leftRightAnimation = useSpring({ to: { x: -10 }, from: { x: 10 }, config: config.molasses, loop: { reverse: true } });
-  const rightLeftAnimation = useSpring({ to: { x: 10 }, from: { x: -10 }, config: config.molasses, loop: { reverse: true } });
-
-  const leftRightAnimationTwo = useSpring({ to: { x: 10, color: '#facc15' }, from: { x: -10, color: '#22d3ee' }, config: config.molasses, loop: { reverse: true } });
-  const rightLeftAnimationTwo = useSpring({ to: { x: -10, color: '#22d3ee' }, from: { x: 10, color: '#facc15' }, config: config.molasses, loop: { reverse: true } });
-
-  const bounce = useSpring({ to: { rotateZ: 1 }, from: { rotateZ: -1 }, config: config.bounce, delay: 200, loop: { reverse: true } });
+  const fromLeftA = useSpring({ opacity: onSeenA ? 1 : 0, x: onSeenA ? 0 : -200, config: config.molasses, delay: 0 });
+  const fromRightA = useSpring({ opacity: onSeenB ? 1 : 0, x: onSeenB ? 0 : 200, config: config.molasses, delay: 0 });
+  const fromLeftB = useSpring({ opacity: onSeenC ? 1 : 0, x: onSeenC ? 0 : -200, config: config.molasses, delay: 0 });
+  const fromRightB = useSpring({ opacity: onSeenD ? 1 : 0, x: onSeenD ? 0 : 200, config: config.molasses, delay: 0 });
+  const fromLeftC = useSpring({ opacity: onSeenE ? 1 : 0, x: onSeenE ? 0 : -200, config: config.molasses, delay: 0 });
+  const fromRightC = useSpring({ opacity: onSeenF ? 1 : 0, x: onSeenF ? 0 : 200, config: config.molasses, delay: 0 });
 
   return (
     <>
@@ -34,8 +38,15 @@ const Portfolio = () => {
 
             <div className="mt-4" />
 
-            <div className="bg-amber-400 rounded-md p-8">
-              <h2 className="text-gray-800 text-4xl font-bold leading-8">Stoic Nature</h2>
+            <animated.div className="bg-amber-400 rounded-md p-8" style={fromLeftA}>
+              <VisibilitySensor
+                onChange={(e) => {
+                  if (e === false) return;
+                  setOnSeenA(true);
+                }}>
+
+                <h2 className="text-gray-800 text-4xl font-bold leading-8">Stoic Nature</h2>
+              </VisibilitySensor>
               <div className="mt-4" />
               <p className="text-gray-800 text-lg font-serif">
                 Stoic Nature is a journaling app with prompts inspired by the Stoic philosophy. It is a MERN stack app which I am currently working on with two others as a full stack developer.
@@ -48,12 +59,18 @@ const Portfolio = () => {
                   alt="Your Name"
                 />
               </div>
-            </div>
+            </animated.div>
 
             <div className="mt-4" />
 
-            <div className="bg-green-400 rounded-md p-8">
-              <h2 className="text-gray-800 text-4xl font-bold leading-8">CigQuit</h2>
+            <animated.div className="bg-green-400 rounded-md p-8" style={fromRightA}>
+              <VisibilitySensor
+                onChange={(e) => {
+                  if (e === false) return;
+                  setOnSeenB(true);
+                }}>
+                <h2 className="text-gray-800 text-4xl font-bold leading-8">CigQuit</h2>
+              </VisibilitySensor>
               <div className="mt-4" />
               <p className="text-gray-800 text-lg font-serif">
                 CigQuit is a MERN stack app that allows users to track a handful of smoking metrics based on user-entered stats about their smoking habits prior to quitting. CigQuit provides the following metrics: a quit date (so you don’t forget), how many days that have gone by without smoking, how many cigarettes you have avoided smoking by quitting, and how much money you have saved by quitting.
@@ -72,12 +89,19 @@ const Portfolio = () => {
                   alt="Your Name"
                 />
               </div>
-            </div>
+            </animated.div>
 
             <div className="mt-4" />
 
-            <div className="bg-indigo-400 rounded-md p-8">
-              <h2 className="text-white text-4xl font-bold leading-8">Golden Sum</h2>
+            <animated.div className="bg-indigo-400 rounded-md p-8" style={fromLeftB}>
+              <VisibilitySensor
+                onChange={(e) => {
+                  if (e === false) return;
+                  setOnSeenC(true);
+                }}>
+
+                <h2 className="text-white text-4xl font-bold leading-8">Golden Sum</h2>
+              </VisibilitySensor>
               <div className="mt-4" />
               <p className="text-white text-lg font-serif">
                 Golden Sum is a math based puzzle game played on a 5x5 grid. The purpose of the game is to add the yellow circles to fill in the gray numbered circle by matching its value with the value of a new circle.
@@ -98,12 +122,19 @@ const Portfolio = () => {
                   alt="Your Name"
                 />
               </div>
-            </div>
+            </animated.div>
 
             <div className="mt-4" />
 
-            <div className="bg-emerald-400 rounded-md p-8">
-              <h2 className="text-gray-800 text-4xl font-bold leading-8">CigQuit</h2>
+            <animated.div className="bg-emerald-400 rounded-md p-8" style={fromRightB}>
+              <VisibilitySensor
+                onChange={(e) => {
+                  if (e === false) return;
+                  setOnSeenD(true);
+                }}>
+
+                <h2 className="text-gray-800 text-4xl font-bold leading-8">CigQuit</h2>
+              </VisibilitySensor>
               <div className="mt-4" />
               <p className="text-gray-800 text-lg font-serif">
                 Circles is a game made exclusively for the web. It is the cousin website to my app Golden Sum. The main difference (other than the platform it is presented on) is that the grid of circles is slightly different. This leads to simpler game play and makes circles an easier game.
@@ -122,12 +153,19 @@ const Portfolio = () => {
                   alt="Your Name"
                 />
               </div>
-            </div>
+            </animated.div>
 
             <div className="mt-4" />
 
-            <div className="bg-teal-400 rounded-md p-8">
-              <h2 className="text-gray-800 text-4xl font-bold leading-8">Group Six Solitaire</h2>
+            <animated.div className="bg-teal-400 rounded-md p-8" style={fromLeftC}>
+              <VisibilitySensor
+                onChange={(e) => {
+                  if (e === false) return;
+                  setOnSeenE(true);
+                }}>
+
+                <h2 className="text-gray-800 text-4xl font-bold leading-8">Group Six Solitaire</h2>
+              </VisibilitySensor>
               <div className="mt-4" />
               <p className="text-gray-800 text-lg font-serif">
                 Group Six Solitaire was a group project I did while I was in school. I enjoy working in groups while coding because it allows everyone's strengths to shine. The game is fully functional, it includes auto stack, drag to stack, vegas mode, a scoring system, and more.
@@ -146,12 +184,18 @@ const Portfolio = () => {
                   alt="Your Name"
                 />
               </div>
-            </div>
+            </animated.div>
 
             <div className="mt-4" />
 
-            <div className="bg-sky-400 rounded-md p-8">
-              <h2 className="text-gray-800 text-4xl font-bold leading-8">Comp Sci Calculator</h2>
+            <animated.div className="bg-sky-400 rounded-md p-8" style={fromRightC}>
+              <VisibilitySensor
+                onChange={(e) => {
+                  if (e === false) return;
+                  setOnSeenF(true);
+                }}>
+                <h2 className="text-gray-800 text-4xl font-bold leading-8">Comp Sci Calculator</h2>
+              </VisibilitySensor>
               <div className="mt-4" />
               <p className="text-gray-800 text-lg font-serif">
                 CompSciCalculator is a simple tool that allows you to convert from different number systems. I had used such tools early in my studies at Algonquin College and wanted to see if I could make one myself! Turns out it was really easy, as JavaScript has a built in function that allows for number system conversion.
@@ -167,7 +211,7 @@ const Portfolio = () => {
                   alt="Your Name"
                 />
               </div>
-            </div>
+            </animated.div>
 
           </div>
         </div>
