@@ -14,12 +14,12 @@ const Portfolio = () => {
   const [onSeenF, setOnSeenF] = useState(false);
 
   // Springs
-  const fromLeftA = useSpring({ opacity: onSeenA ? 1 : 0, x: onSeenA ? 0 : -200, config: config.molasses, delay: 0 });
-  const fromRightA = useSpring({ opacity: onSeenB ? 1 : 0, x: onSeenB ? 0 : 200, config: config.molasses, delay: 0 });
-  const fromLeftB = useSpring({ opacity: onSeenC ? 1 : 0, x: onSeenC ? 0 : -200, config: config.molasses, delay: 0 });
-  const fromRightB = useSpring({ opacity: onSeenD ? 1 : 0, x: onSeenD ? 0 : 200, config: config.molasses, delay: 0 });
-  const fromLeftC = useSpring({ opacity: onSeenE ? 1 : 0, x: onSeenE ? 0 : -200, config: config.molasses, delay: 0 });
-  const fromRightC = useSpring({ opacity: onSeenF ? 1 : 0, x: onSeenF ? 0 : 200, config: config.molasses, delay: 0 });
+  const fromLeftA = useSpring({ opacity: onSeenA ? 1 : 0, y: onSeenA ? 0 : 100, config: config.molasses, delay: 0 });
+  const fromRightA = useSpring({ opacity: onSeenB ? 1 : 0, y: onSeenB ? 0 : 100, config: config.molasses, delay: 0 });
+  const fromLeftB = useSpring({ opacity: onSeenC ? 1 : 0, y: onSeenC ? 0 : 100, config: config.molasses, delay: 0 });
+  const fromRightB = useSpring({ opacity: onSeenD ? 1 : 0, y: onSeenD ? 0 : 100, config: config.molasses, delay: 0 });
+  const fromLeftC = useSpring({ opacity: onSeenE ? 1 : 0, y: onSeenE ? 0 : 100, config: config.molasses, delay: 0 });
+  const fromRightC = useSpring({ opacity: onSeenF ? 1 : 0, y: onSeenF ? 0 : 100, config: config.molasses, delay: 0 });
 
   return (
     <>
